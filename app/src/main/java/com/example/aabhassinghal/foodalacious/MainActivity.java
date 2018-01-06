@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 //                VisibleArray.setVisibility(View.GONE);
 //                View VisibleObject = findViewById(R.id.RetrofitObject);
 //                VisibleObject.setVisibility(View.GONE);
-                getRetrofitObject();
+                deleteRetrofitObject();
             }
         });
     }
@@ -45,6 +45,38 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Log.d("message","asssA"+response.body());
                     text_id_1.setText("StudentId  :  " + response.body().getTitle());
+
+                } catch (Exception e) {
+                    Log.d("onResponse", "There is an error");
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d("onFailure", t.toString());
+            }
+        });
+
+    }
+
+    void updateRetrofitObject() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
+        RecipeObject service = retrofit.create(RecipeObject.class);
+        Recipesinstructions ri = new Recipesinstructions("Cook on sleweweweow");
+        ArrayList<Recipesinstructions> recipes_instructions = new ArrayList<>();
+        recipes_instructions.add(0,ri);
+        Recipeingredients ri2 = new Recipeingredients("12","Jeeweweweera");
+        ArrayList<Recipeingredients> recipes_ingredients = new ArrayList<>();
+        recipes_ingredients.add(0,ri2);
+        Recipe r = new Recipe("Pannwweweweerrasa22s",1,12221,31,recipes_instructions,recipes_ingredients);
+        Call<Recipe> call = service.updateStudentDetails(5,r);
+        call.enqueue(new Callback<Recipe>() {
+            @Override
+            public void onResponse(Response<Recipe> response, Retrofit retrofit) {
+                try {
+                    Recipe r1 = response.body();
+                    text_id_1.setText("StudentId  :  " + r1.getTitle());
 
                 } catch (Exception e) {
                     Log.d("onResponse", "There is an error");
@@ -77,6 +109,31 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Recipe r1 = response.body();
                     text_id_1.setText("StudentId  :  " + r1.getTitle());
+
+                } catch (Exception e) {
+                    Log.d("onResponse", "There is an error");
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d("onFailure", t.toString());
+            }
+        });
+
+    }
+
+    void deleteRetrofitObject() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
+        RecipeObject service = retrofit.create(RecipeObject.class);
+        Call<Recipe> call = service.deleteStudentDetails(5);
+        call.enqueue(new Callback<Recipe>() {
+            @Override
+            public void onResponse(Response<Recipe> response, Retrofit retrofit) {
+                try {
+
+                    text_id_1.setText("StudentId  :  " + response.toString());
 
                 } catch (Exception e) {
                     Log.d("onResponse", "There is an error");
