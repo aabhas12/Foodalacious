@@ -15,7 +15,7 @@ public class Recipe {
     int user_id;
     @SerializedName("time")
     int time;
-    @SerializedName("Servings")
+    @SerializedName("servings")
     int servings;
     @SerializedName("recipes_instructions")
     ArrayList<Recipesinstructions> recipes_instructions = new ArrayList<>();
