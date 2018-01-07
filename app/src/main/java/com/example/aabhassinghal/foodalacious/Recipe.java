@@ -17,6 +17,8 @@ public class Recipe {
     int time;
     @SerializedName("servings")
     int servings;
+    @SerializedName("icon")
+    String icon;
     @SerializedName("recipes_instructions")
     ArrayList<Recipesinstructions> recipes_instructions = new ArrayList<>();
     @SerializedName("recipes_ingredients")
@@ -29,6 +31,14 @@ public class Recipe {
         this.servings = servings;
         this.recipes_instructions = recipes_instructions;
         this.recipes_ingredients = recipes_ingredients;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public String getTitle() {

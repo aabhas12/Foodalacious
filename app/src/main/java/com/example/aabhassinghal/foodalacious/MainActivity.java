@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit.Call;
 import retrofit.Callback;
@@ -31,20 +32,20 @@ public class MainActivity extends AppCompatActivity {
 //                VisibleArray.setVisibility(View.GONE);
 //                View VisibleObject = findViewById(R.id.RetrofitObject);
 //                VisibleObject.setVisibility(View.GONE);
-                deleteRetrofitObject();
+                getRetrofitObject();
             }
         });
     }
     void getRetrofitObject() {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
         RecipeObject service = retrofit.create(RecipeObject.class);
-        Call<Recipe> call = service.getStudentDetails();
-        call.enqueue(new Callback<Recipe>() {
+        Call<List<Recipe>> call = service.getallStudentDetails();
+        call.enqueue(new Callback<List<Recipe>>() {
             @Override
-            public void onResponse(Response<Recipe> response, Retrofit retrofit) {
+            public void onResponse(Response<List<Recipe>> response, Retrofit retrofit) {
                 try {
                     Log.d("message","asssA"+response.body());
-                    text_id_1.setText("StudentId  :  " + response.body().getTitle());
+                    List<Recipe> re = response.body();
 
                 } catch (Exception e) {
                     Log.d("onResponse", "There is an error");

@@ -1,5 +1,7 @@
 package com.example.aabhassinghal.foodalacious;
 
+import java.util.List;
+
 import retrofit.Call;
 import retrofit.http.Body;
 import retrofit.http.DELETE;
@@ -15,6 +17,9 @@ import retrofit.http.Path;
 public interface RecipeObject {
     @GET("recipeupdate/6/")
     Call<Recipe> getStudentDetails();
+
+    @GET("recipesave/")
+    Call<List<Recipe>> getallStudentDetails();
 
     @POST("recipesave/")
     Call<Recipe> saveStudentDetails(@Body Recipe recipe);
