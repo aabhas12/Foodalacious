@@ -23,12 +23,12 @@ public class Bottom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
 
-        toolbar = getSupportActionBar();
+//        toolbar = getSupportActionBar();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        toolbar.setTitle("Shop");
+//        toolbar.setTitle("Shop");
         loadFragment(new StoreFragment());
     }
 
@@ -40,22 +40,22 @@ public class Bottom extends AppCompatActivity {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_shop:
-                    toolbar.setTitle("Shop");
+//                    toolbar.setTitle("Recipes");
                     fragment = new StoreFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_gifts:
-                    toolbar.setTitle("My Gifts");
+//                    toolbar.setTitle("My Gifts");
                     fragment = new GiftsFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_cart:
-                    toolbar.setTitle("Cart");
+//                    toolbar.setTitle("Cart");
                     fragment = new CartFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_profile:
-                    toolbar.setTitle("Profile");
+//                    toolbar.setTitle("Profile");
                     fragment = new ProfileFragment();
                     loadFragment(fragment);
                     return true;
