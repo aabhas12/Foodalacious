@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "86580823547",
+    "firebase_url": "https://foodalacious.firebaseio.com",
+    "project_id": "foodalacious",
+    "storage_bucket": "foodalacious.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86580823547:android:664c8865d43b5c88",
+        "android_client_info": {
+          "package_name": "com.example.aabhassinghal.foodalacious"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86580823547-0ggc6ao23def0mf54fam3c8fl8p8dvkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY24l-I7m0atWz347Aq_00u5JAHqkjwlA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

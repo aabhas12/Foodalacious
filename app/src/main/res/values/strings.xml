@@ -7,4 +7,10 @@
     <string name="toolbar_title">Recipes</string>
     <string name="action_search">Search</string>
     <string name="search_hint">Type name…</string>
+    <string name="facebook_app_id">1658546137542452</string>
+    <string name="fb_login_protocol_scheme">fb1658546137542452</string>
+    <string name="feedbacktype1">Praise</string>
+    <string name="feedbacktype2">Gripe</string>
+    <string name="feedbacktype3">Suggestion</string>
+    <string name="feedbacktype4">Bug</string>
 </resources>

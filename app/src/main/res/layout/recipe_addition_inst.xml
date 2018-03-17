@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/editTextnew"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="left|top"
+        android:hint=" Enter the Instructions"
+        android:inputType="text|textMultiLine"
+        android:scrollbars="vertical" />
+
+    <ImageButton
+        android:id="@+id/imageViewRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText0"
+        android:layout_alignTop="@+id/editText0"
+        android:onClick="ondelete"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_highlight_off_black_24dp" />
+
+
+</RelativeLayout>

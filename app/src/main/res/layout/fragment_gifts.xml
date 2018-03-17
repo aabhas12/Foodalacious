@@ -1,14 +1,43 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aabhassinghal.foodalacious.Bottom">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Gifts"
-        android:gravity="center"
-        android:textSize="22dp" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button5"
+            android:layout_marginEnd="81dp"
+            android:layout_marginTop="200dp"
+            android:layout_toStartOf="@+id/button5"
+            app:srcCompat="@drawable/com_facebook_auth_dialog_background"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="181dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/button4"
+            android:layout_marginEnd="39dp"
+            android:text="Button"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="76dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </RelativeLayout>
+
 
 </FrameLayout>

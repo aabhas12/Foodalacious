@@ -1,5 +1,6 @@
 package com.example.aabhassinghal.foodalacious;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -57,6 +58,11 @@ public class Bottom extends AppCompatActivity {
                 case R.id.navigation_profile:
 //                    toolbar.setTitle("Profile");
                     fragment = new ProfileFragment();
+                    Intent intent = getIntent();
+                    String jsondata = intent.getStringExtra("userProfile");
+                    Bundle bundle = new Bundle();
+                    bundle.putString("edttext",jsondata);
+                    fragment.setArguments(bundle);
                     loadFragment(fragment);
                     return true;
             }

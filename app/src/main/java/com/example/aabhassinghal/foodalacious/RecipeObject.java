@@ -6,8 +6,8 @@ import retrofit.Call;
 import retrofit.http.Body;
 import retrofit.http.DELETE;
 import retrofit.http.GET;
+import retrofit.http.PATCH;
 import retrofit.http.POST;
-import retrofit.http.PUT;
 import retrofit.http.Path;
 
 /**
@@ -15,19 +15,19 @@ import retrofit.http.Path;
  */
 
 public interface RecipeObject {
-    @GET("recipeupdate/6/")
+    @GET("recipe/recipeupdate/6/")
     Call<Recipe> getStudentDetails();
 
-    @GET("recipesave/")
+    @GET("recipe/recipeupdate/")
     Call<List<Recipe>> getallStudentDetails();
 
-    @POST("recipesave/")
+    @POST("recipe/recipeupdate/")
     Call<Recipe> saveStudentDetails(@Body Recipe recipe);
 
-    @PUT("recipeupdate/{id}/")
+    @PATCH("recipe/recipeupdate/{id}/")
     Call<Recipe> updateStudentDetails(@Path("id")int id,@Body Recipe recipe);
 
-    @DELETE("recipeupdate/{id}/")
+    @DELETE("recipe/recipeupdate/{id}/")
     Call<Recipe> deleteStudentDetails(@Path("id")int id);
 
 }
